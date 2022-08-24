@@ -1,6 +1,6 @@
 ---
 title: "BEE 4750/5750 Homework 0"
-author: "Your name here (your netID here)"
+author: "Julia Gonzales (jeg334)"
 date: `j import Dates; Dates.Date(Dates.now())`
 weave_options:
   term: true
@@ -17,9 +17,13 @@ Pkg.instantiate()
 ```
 
 # Problem 1
-
+function square_number(x)
+x*x
+return x*x
+end
 ## Problem 1.1
-
+x = 5
+"We can see that $x^2 =$ `j square_number(x)` ."
 ## Problem 1.2
 
 ## Problem 1.3
