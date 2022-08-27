@@ -73,19 +73,59 @@ function square_root(x,a)
   end 
 end
 sqroot = square_root(2,1)
-println(sqroot)
 ```
+The square root of 2 is $sqroot. 
 
 # Problem 3
 
 ## Problem 3.1
-
+ ```julia
+ vect = rand(20)
+```
 ## Problem 3.2
+```julia
+function mean!(vect)
+  newsum = 0
+  oldnum = 0
+  for i in eachindex(vect)
+  newnum = vect[i]
+  newsum = oldnum + newnum
+  oldnum = newnum 
+  end 
+  mean = newsum/length(vect)
+  return mean
+end
+
+function demean(vect)
+  mean = mean!(vect)
+  vectnew = vect
+  for i in eachindex(vect)
+  vectnew[i] -= mean
+  end
+  return vectnew
+end
+
+```
 
 ## Problem 3.3
+```julia
+vec = rand(10)
+vec[1:2] .= 0
+vec[9:10] .= 0
+vec[3:8] .= 1
+```
+
 
 ## Problem 3.4
-
+```julia
+fmatrix = rand(5,5)
+using Statistics 
+newfmatrix = fmatrix
+for i in 1:5
+  newfmatrix[:,i] = fmatrix[:,i] .- mean(fmatrix[:,i])
+end
+println(newfmatrix)
+```
 # Problem 4
 
 ## Problem 4.1
