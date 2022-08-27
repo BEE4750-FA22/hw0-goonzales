@@ -33,11 +33,11 @@ a
 
 ## Problem 1.3
 ```julia; eval = true; out_width = "12 cm", label = "square-plot"
-#add the plots package
+using Pkg
 Pkg.add("Plots")
 # plot your vectors 
 using Plots
-plot(square_number, -10, 10, title = "Square Numbers over [-10,10]",xlabel = "Range", ylabel = "Squared Numbers")
+plot(square_number, -10, 10,title = "Square Numbers over [-10,10]",xlabel = "Range", ylabel = "Squared Numbers")
 ```
 ```math
 \ref{fig:square-plot}
@@ -129,9 +129,33 @@ println(newfmatrix)
 # Problem 4
 
 ## Problem 4.1
+```julia
+mu = log(0.03)
+stdev = 0.005
+using Distributions
+log_normal_dist = LogNormal(mu, stdev)
+yt = rand(log_normal_dist,100)
+
+```
 
 ## Problem 4.2
+```julia
+function Xt(a,yt,b,q,T,X0)
+  Xt = zeros(T+1)
+  Xt[1] = X0
+  for i in 2:T+1
+    Xt[i] = Xt[i-1] + a + yt[i-1] + ((Xt[i-1])^q)/(1+(Xt[i-1])^q) - b*Xt[i-1]
+  end
+return Xt
+end    
 
+```
 ## Problem 4.3
+```julia 
+using Plots
+xaxis = 0:1:100
+Xt = Xt(a,yt,b,q,T,X0)
+plot(xaxis, Xt, title = "Phosphorus Levels",xlabel = "t", ylabel = "Phosphorus concentration")
+``` 
 
 # References
