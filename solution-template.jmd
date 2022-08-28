@@ -29,10 +29,7 @@ end
 We can see that 5^2 = `j square_number(5)`.
 
 ## Problem 1.3
-```julia; eval = true; out_width = "12 cm", label = "square-plot"
-using Pkg
-Pkg.add("Plots")
-# plot your vectors 
+```julia; eval = true; out_width = "12 cm", label = "square-plot" 
 using Plots
 plot(square_number, -10, 10,title = "Square Numbers over [-10,10]",xlabel = "Range", ylabel = "Squared Numbers")
 ```
@@ -67,6 +64,7 @@ function square_root(x,a)
     a = avg
     error = abs(x/a - a)
   end 
+  return a
 end
 ```
 The square root of 2 is `j square_root(2,1)`.
@@ -91,6 +89,7 @@ function mean!(vect)
   mean = newsum/length(vect)
   return mean
 end
+mean!(vect)
 
 function demean(vect)
   mean = mean!(vect)
@@ -100,6 +99,7 @@ function demean(vect)
   end
   return vectnew
 end
+demean(vect)
 
 ```
 
