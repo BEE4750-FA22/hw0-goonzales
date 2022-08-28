@@ -160,6 +160,8 @@ plot(xaxis, phosphor, title = "Phosphorus Levels",xlabel = "t", ylabel = "Phosph
 ```math
 \ref{fig:P-plot}
 ```
+After a certain time, the phosphorus concentration becomes constant over time. 
+
 
 # References
 Abhinav96. (2020, February 19). "For loop in Julia." Geeks for Geeks. https://www.geeksforgeeks.org/for-loop-in-julia/
