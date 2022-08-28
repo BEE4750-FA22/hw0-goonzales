@@ -47,14 +47,13 @@ Since x divided by $\sqrt{x}$ is $\sqrt{x}$, $\sqrt{x}$ is a sort of middle poin
 If a is larger than $\sqrt{x}$, than $x\div a$ will be smaller than $\sqrt{x}$. Alternatively, if a is smaller than $\sqrt{x}$, then $x\div a$ will be larger than $\sqrt{x}$. 
 ```math
 a > \sqrt{x}\\
-a\cdot\sqrt{x} > sqrt{x}\cdot\sqrt{x}\\
+a\cdot\sqrt{x} > \sqrt{x}\cdot\sqrt{x}\\
 a\cdot\sqrt{x} > x\\
-\sqrt{x} > x\div a\\
-\\
+\sqrt{x} > x\div a\\\\
 a < \sqrt{x}\\
-a\cdot\sqrt{x} < sqrt{x}\cdot\sqrt{x}\\
+a\cdot\sqrt{x} < \sqrt{x}\cdot\sqrt{x}\\
 a\cdot\sqrt{x} < x\\
-\sqrt{x} < x/a
+\sqrt{x} < x\div a
 ```
 Therefore, the square root must lie between a and $x\div a$. 
 
@@ -69,16 +68,15 @@ function square_root(x,a)
     error = abs(x/a - a)
   end 
 end
-sqroot = square_root(2,1)
 ```
-The square root of 2 is `j sqroot`.
+The square root of 2 is `j square_root(2,1)`.
 
 # Problem 3
 
 ## Problem 3.1
 ```julia
  vect = rand(20)
- println(vect)
+ vect
 ```
 ## Problem 3.2
 ```julia
@@ -148,6 +146,12 @@ end
 
 ## Problem 4.3
 ```julia; eval = true; out_width = "12 cm", label = "P-plot"
+a = 0.4
+yt = rand(log_normal_dist,100)
+b =.42
+q = 2
+T = 100
+X0 = 10
 using Plots
 xaxis = 0:1:100
 phosphor = Xt(a,yt,b,q,T,X0)
@@ -158,6 +162,46 @@ plot(xaxis, phosphor, title = "Phosphorus Levels",xlabel = "t", ylabel = "Phosph
 ```
 
 # References
+Abhinav96. (2020, February 19). "For loop in Julia." Geeks for Geeks. https://www.geeksforgeeks.org/for-loop-in-julia/
+
+"Arrays." (n.d.). Julia. https://docs.julialang.org/en/v1/base/arrays/#Base.eachindex
+
+"Basic Concepts." (n.d.). Julia. https://docs.juliaplots.org/latest/basics/#Useful-Tips
+
 Carpenter, S. R., Ludwig, D., & Brock, W. A. (1999). Management of Eutrophication for Lakes Subject to Potentially Irreversible Change. Ecological Applications, 9(3), 751-771. https://doi.org/10.2307/2641327
 
+Christersson, M. (2019). "Basic Code." Latex on the Web. http://www.malinc.se/math/latex/basiccodeen.php#:~:text=The%20code%20%5Ctimes%20is%20used,never%20be%20negative%20by%20definition.
+
+"Chunk Options." (n.d.). Weave.jl. https://weavejl.mpastell.com/stable/chunk_options/
+
+Edelman, A., Sanders, D. P., & Leiserson, C. E. (2021). "Introduction to Computational Thinking." MIT. https://computationalthinking.mit.edu/Spring21/hw0/
+
+"Indexing." (n.d.). Dataframes.jl. https://dataframes.juliadata.org/stable/lib/indexing/
+
+"Getting Started." (n.d.). Distributions.jl. https://juliastats.org/Distributions.jl/stable/starting/
+
+Gregory, V., Stachurski, A., & Watkins, N. (2017). "MATLAB-Python-Julia cheatsheet." QuantEcon. https://cheatsheets.quantecon.org/
+
+"How to Install a Package in Julia (Example Included)." (2022, January 29). Data to Fish. https://datatofish.com/install-package-julia/
+
+Julia Language Discourse [ark]. (2020, May). Best practices for generating vectors with ones, zeros, rand, etc [Online forum post]. Julia. https://discourse.julialang.org/t/best-practices-for-generating-vectors-with-ones-zeros-rand-etc/40197
+
+Julia Language Discourse [benninkrs]. (2019, March). How to interrupt (not kill) julia from the REPL [Online forum post]. Julia. https://discourse.julialang.org/t/how-to-interrupt-not-kill-julia-from-the-repl/22565
+
+Julia Language Discourse [LotteVictor]. (2017, November). LogNormal-Distribution - how to set mu and sigma [Online forum post]. Julia. https://discourse.julialang.org/t/lognormal-distribution-how-to-set-mu-and-sigma/7101
+
+Julia Language Discourse [Soldalma]. (2021, December). Why does VSCode say there is a problem in this code? [ONline forum post]. Julia. https://discourse.julialang.org/t/why-does-vscode-say-there-is-a-problem-in-this-code/73280
+
+"Learn LaTeX in 30 minutes." (n.d.). Overleaf. https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+
+"Mathematical expressions." (n.d.). Overleaf. https://www.overleaf.com/learn/latex/Mathematical_expressions
+
 Quinn, J. D., Reed, P. M., & Keller, K. (2017). Direct policy search for robust multi-objective management of deeply uncertain socio-ecological tipping points. Environmental Modelling & Software, 92, 125-141. https://doi.org/10.1016/j.envsoft.2017.02.017
+
+"Statistics." (n.d.). Julia. https://docs.julialang.org/en/v1/stdlib/Statistics/
+
+"Strings." (n.d.). Julia. https://docs.julialang.org/en/v1/base/strings/
+
+"Using Weave." (n.d.). Weave.jl. https://weavejl.mpastell.com/stable/usage/#code-chunks
+
+With help from Sarah Mack and Mohamed Aden. 
