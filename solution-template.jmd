@@ -78,7 +78,7 @@ The square root of 2 is `j square_root(2,1)`.
 ```
 ## Problem 3.2
 ```julia
-function mean!(vect)
+function mean(vect)
   newsum = 0
   oldnum = 0
   for i in eachindex(vect)
@@ -89,7 +89,7 @@ function mean!(vect)
   mean = newsum/length(vect)
   return mean
 end
-mean!(vect)
+mean(vect)
 
 function demean(vect)
   mean = mean!(vect)
