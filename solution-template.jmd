@@ -31,7 +31,7 @@ We can see that 5^2 = `j square_number(5)`.
 ## Problem 1.3
 ```julia; eval = true; out_width = "12 cm", label = "square-plot" 
 using Plots
-plot(square_number, -10, 10,title = "Square Numbers over [-10,10]",xlabel = "Range", ylabel = "Squared Numbers")
+plot(square_number, -10, 10,title = "Square Numbers over [-10,10]",xlabel = "Range", ylabel = "Squared Numbers", legend = false)
 ```
 ```math
 \ref{fig:square-plot}
@@ -78,7 +78,7 @@ The square root of 2 is `j square_root(2,1)`.
 ```
 ## Problem 3.2
 ```julia
-function mean(vect)
+function mean_fun(vect)
   newsum = 0
   oldnum = 0
   for i in eachindex(vect)
@@ -86,13 +86,13 @@ function mean(vect)
   newsum = oldnum + newnum
   oldnum = newnum 
   end 
-  mean = newsum/length(vect)
-  return mean
+  meannew = newsum/length(vect)
+  return meannew
 end
-mean(vect)
+mean_fun(vect)
 
 function demean(vect)
-  mean = mean!(vect)
+  mean = mean_fun(vect)
   vectnew = vect
   for i in eachindex(vect)
   vectnew[i] -= mean
@@ -155,7 +155,7 @@ X0 = 10
 using Plots
 xaxis = 0:1:100
 phosphor = Xt(a,yt,b,q,T,X0)
-plot(xaxis, phosphor, title = "Phosphorus Levels",xlabel = "t", ylabel = "Phosphorus concentration")
+plot(xaxis, phosphor, title = "Phosphorus Levels",xlabel = "t", ylabel = "Phosphorus concentration", legend = false)
 ``` 
 ```math
 \ref{fig:P-plot}
