@@ -89,7 +89,7 @@ function mean_fun(vect)
   meannew = newsum/length(vect)
   return meannew
 end
-mean(vect)
+mean_fun(vect)
 
 function demean(vect)
   mean = mean_fun(vect)
